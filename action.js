@@ -1,58 +1,122 @@
-// Select the Kick button
-const kickButton = document.getElementById("kick-button");
 
-// Select the Ride button
-const rideButton = document.getElementById("ride-button");
+// ======================================
+// SELECT ALL AUDIO ELEMENTS
+// ======================================
 
-// Select the Kick audio element
 const kickSound = document.getElementById("kick-sound");
-
-// Select the Ride audio element
 const rideSound = document.getElementById("ride-sound");
+const boomSound = document.getElementById("boom-sound");
+const clapSound = document.getElementById("clap-sound");
+const hihatSound = document.getElementById("hihat-sound");
+const openhatSound = document.getElementById("openhat-sound");
+const snareSound = document.getElementById("snare-sound");
+const tinkSound = document.getElementById("tink-sound");
+const tomSound = document.getElementById("tom-sound");
 
 
-// KICK BUTTON FUNCTIONALITY
-kickButton.addEventListener("click", function() {
+// ======================================
+// FUNCTION TO PLAY A DRUM SOUND
+// ======================================
 
-    // Restart the Kick sound
-    kickSound.currentTime = 0;
+function playSound(sound) {
 
-    // Play the Kick sound
-    kickSound.play();
+    // Restart the sound from the beginning
+    sound.currentTime = 0;
 
-});
+    // Play the audio
+    sound.play();
 
-
-// RIDE BUTTON FUNCTIONALITY
-rideButton.addEventListener("click", function() {
-
-    // Restart the Ride sound
-    rideSound.currentTime = 0;
-
-    // Play the Ride sound
-    rideSound.play();
-
-});
+}
 
 
-// KEYBOARD FUNCTIONALITY
-document.addEventListener("keydown", function(event) {
+// ======================================
+// CONNECT KEYBOARD KEYS TO SOUNDS
+// ======================================
 
-    // Check if the A key was pressed
-    if (event.key.toLowerCase() === "a") {
+const drumSounds = {
 
-        // Restart and play the Kick sound
-        kickSound.currentTime = 0;
-        kickSound.play();
+    "a": {
+        sound: kickSound,
+        button: document.getElementById("kick-button")
+    },
 
+    "s": {
+        sound: rideSound,
+        button: document.getElementById("ride-button")
+    },
+
+    "d": {
+        sound: boomSound,
+        button: document.getElementById("boom-button")
+    },
+
+    "f": {
+        sound: clapSound,
+        button: document.getElementById("clap-button")
+    },
+
+    "g": {
+        sound: hihatSound,
+        button: document.getElementById("hihat-button")
+    },
+
+    "h": {
+        sound: openhatSound,
+        button: document.getElementById("openhat-button")
+    },
+
+    "j": {
+        sound: snareSound,
+        button: document.getElementById("snare-button")
+    },
+
+    "k": {
+        sound: tinkSound,
+        button: document.getElementById("tink-button")
+    },
+
+    "l": {
+        sound: tomSound,
+        button: document.getElementById("tom-button")
     }
 
-    // Check if the S key was pressed
-    else if (event.key.toLowerCase() === "s") {
+};
 
-        // Restart and play the Ride sound
-        rideSound.currentTime = 0;
-        rideSound.play();
+
+// ======================================
+// BUTTON FUNCTIONALITY
+// ======================================
+
+// Add a click event to every drum button
+Object.values(drumSounds).forEach(function(drum) {
+
+    drum.button.addEventListener("click", function() {
+
+        // Play the corresponding drum sound
+        playSound(drum.sound);
+
+    });
+
+});
+
+
+// ======================================
+// KEYBOARD FUNCTIONALITY
+// ======================================
+
+document.addEventListener("keydown", function(event) {
+
+    // Get the pressed key
+    const key = event.key.toLowerCase();
+
+    // Find the corresponding drum
+    const drum = drumSounds[key];
+
+    // Check if the key has a drum assigned
+    if (drum) {
+
+        // Play the corresponding sound
+        playSound(drum.sound);
 
     }
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,30 +19,109 @@
 
         <h1>DRUM KIT</h1>
 
-        <!-- Kick drum button -->
-        <button id="kick-button" class="drum-button">
-            KICK
-        </button>
+        <!-- Container for all drum buttons -->
+        <div class="drum-grid">
 
-        <!-- Ride cymbal button -->
-        <button id="ride-button" class="drum-button">
-            RIDE
-        </button>
+            <!-- Kick: A -->
+            <button id="kick-button" class="drum-button">
+                KICK <span>A</span>
+            </button>
+
+            <!-- Ride: S -->
+            <button id="ride-button" class="drum-button">
+                RIDE <span>S</span>
+            </button>
+
+            <!-- Boom: D -->
+            <button id="boom-button" class="drum-button">
+                BOOM <span>D</span>
+            </button>
+
+            <!-- Clap: F -->
+            <button id="clap-button" class="drum-button">
+                CLAP <span>F</span>
+            </button>
+
+            <!-- Hi-Hat: G -->
+            <button id="hihat-button" class="drum-button">
+                HI-HAT <span>G</span>
+            </button>
+
+            <!-- Open Hat: H -->
+            <button id="openhat-button" class="drum-button">
+                OPEN HAT <span>H</span>
+            </button>
+
+            <!-- Snare: J -->
+            <button id="snare-button" class="drum-button">
+                SNARE <span>J</span>
+            </button>
+
+            <!-- Tink: K -->
+            <button id="tink-button" class="drum-button">
+                TINK <span>K</span>
+            </button>
+
+            <!-- Tom: L -->
+            <button id="tom-button" class="drum-button">
+                TOM <span>L</span>
+            </button>
+
+        </div>
 
         <!-- Keyboard instructions -->
-        <p>A = Kick | S = Ride</p>
+        <p>Use your keyboard to play the drums!</p>
 
     </main>
 
-    <!-- Pre-load the Kick audio file -->
+
+    <!-- AUDIO ELEMENTS -->
+
+    <!-- Kick sound -->
     <audio id="kick-sound" preload="auto">
         <source src="sounds/kick.wav" type="audio/wav">
     </audio>
 
-    <!-- Pre-load the Ride audio file -->
+    <!-- Ride sound -->
     <audio id="ride-sound" preload="auto">
         <source src="sounds/ride.wav" type="audio/wav">
     </audio>
+
+    <!-- Boom sound -->
+    <audio id="boom-sound" preload="auto">
+        <source src="sounds/boom.wav" type="audio/wav">
+    </audio>
+
+    <!-- Clap sound -->
+    <audio id="clap-sound" preload="auto">
+        <source src="sounds/clap.wav" type="audio/wav">
+    </audio>
+
+    <!-- Hi-Hat sound -->
+    <audio id="hihat-sound" preload="auto">
+        <source src="sounds/hihat.wav" type="audio/wav">
+    </audio>
+
+    <!-- Open Hat sound -->
+    <audio id="openhat-sound" preload="auto">
+        <source src="sounds/openhat.wav" type="audio/wav">
+    </audio>
+
+    <!-- Snare sound -->
+    <audio id="snare-sound" preload="auto">
+        <source src="sounds/snare.wav" type="audio/wav">
+    </audio>
+
+    <!-- Tink sound -->
+    <audio id="tink-sound" preload="auto">
+        <source src="sounds/tink.wav" type="audio/wav">
+    </audio>
+
+    <!-- Tom sound -->
+    <audio id="tom-sound" preload="auto">
+        <source src="sounds/tom.wav" type="audio/wav">
+    </audio>
+
 
     <!-- Connect the JavaScript file -->
     <script src="action.js"></script>
