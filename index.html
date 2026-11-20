@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,22 +16,36 @@
     <!-- Main container for the drum kit -->
     <main class="drum-container">
 
-        <h1>-Versio Drum</h1>
+        <h1>DRUM KIT</h1>
 
         <!-- Kick drum button -->
         <button id="kick-button" class="drum-button">
             KICK
         </button>
 
+        <!-- Ride cymbal button -->
+        <button id="ride-button" class="drum-button">
+            RIDE
+        </button>
+
+        <!-- Keyboard instructions -->
+        <p>A = Kick | S = Ride</p>
+
     </main>
 
-    <!-- Pre-load the kick drum audio file -->
+    <!-- Pre-load the Kick audio file -->
     <audio id="kick-sound" preload="auto">
         <source src="sounds/kick.wav" type="audio/wav">
+    </audio>
+
+    <!-- Pre-load the Ride audio file -->
+    <audio id="ride-sound" preload="auto">
+        <source src="sounds/ride.wav" type="audio/wav">
     </audio>
 
     <!-- Connect the JavaScript file -->
     <script src="action.js"></script>
 
 </body>
+
 </html>

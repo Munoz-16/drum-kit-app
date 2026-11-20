@@ -1,17 +1,59 @@
-
-// Select the Kick button from the HTML
+// Select the Kick button
 const kickButton = document.getElementById("kick-button");
 
-// Select the kick drum audio element
+// Select the Ride button
+const rideButton = document.getElementById("ride-button");
+
+// Select the Kick audio element
 const kickSound = document.getElementById("kick-sound");
 
-// Listen for clicks on the Kick button
+// Select the Ride audio element
+const rideSound = document.getElementById("ride-sound");
+
+
+// KICK BUTTON FUNCTIONALITY
 kickButton.addEventListener("click", function() {
 
-    // Restart the sound from the beginning
+    // Restart the Kick sound
     kickSound.currentTime = 0;
 
-    // Play the kick drum sound
+    // Play the Kick sound
     kickSound.play();
+
+});
+
+
+// RIDE BUTTON FUNCTIONALITY
+rideButton.addEventListener("click", function() {
+
+    // Restart the Ride sound
+    rideSound.currentTime = 0;
+
+    // Play the Ride sound
+    rideSound.play();
+
+});
+
+
+// KEYBOARD FUNCTIONALITY
+document.addEventListener("keydown", function(event) {
+
+    // Check if the A key was pressed
+    if (event.key.toLowerCase() === "a") {
+
+        // Restart and play the Kick sound
+        kickSound.currentTime = 0;
+        kickSound.play();
+
+    }
+
+    // Check if the S key was pressed
+    else if (event.key.toLowerCase() === "s") {
+
+        // Restart and play the Ride sound
+        rideSound.currentTime = 0;
+        rideSound.play();
+
+    }
 
 });
